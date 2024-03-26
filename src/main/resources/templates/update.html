@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create New User </title>
+</head>
+<body>
+<h2>Update User</h2>
+<br>
+<form th:action="@{/update(id=${user.getId()})}" th:object="${user}" method="post">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}">txt</div>
+    <br>
+    <label for="password">Password</label>
+    <input type="text" th:field="*{password}" id="password"/>
+    <div th:if="${#fields.hasErrors('password')}" th:errors="*{password}">txt</div>
+    <br>
+    <input type="submit" value="Update User"/>
+</form>
+
+<form th:action="@{/logout}" method="get">
+    <input type="submit" value="Logout"/>
+</form>
+</body>
+</html>
