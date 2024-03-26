@@ -12,5 +12,5 @@ public interface UserService {
     void removeUser(long id);
     List<User> userList();
     User getOneUser(long id);
-    public void updateUser(User user);
+    void updateUser(User user);
 }
